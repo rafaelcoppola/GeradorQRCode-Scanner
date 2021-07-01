@@ -1,0 +1,18 @@
+#qr-code {
+  width: 350px;
+  height: 350px;
+  margin-top:15px;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable, #printable * {
+    visibility: visible;
+  }
+  #printable {
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+}

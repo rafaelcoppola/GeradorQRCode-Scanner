@@ -1,0 +1,28 @@
+//gerador de QRCode
+function gerar() {
+  let content = [
+    document.querySelector('#nome').value,
+    document.querySelector('#cpf').value    
+  ]
+  let name = document.querySelector('#nome').value
+  let cpf = document.querySelector('#cpf').value
+  let Googlecharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl='
+  let Randomkey = Math.floor(Math.random() * 1000000000000000000)
+  let UserId = `A chave de ID do usuario ${name} portador do CPF ${cpf} é: ${Randomkey}`
+  let Imageqrcode = Googlecharts + Randomkey
+  document.getElementById('qr-code').src = Imageqrcode;
+  document.getElementById('iduser').value = Randomkey
+  console.log(UserId)
+}
+
+//impressão
+document.getElementById('btn').onclick = function() {
+  var conteudo = document.getElementById('sua_div').innerHTML,
+  tela_impressao = window.open('about:blank');
+
+  tela_impressao.document.write(conteudo);
+  tela_impressao.window.print();
+  tela_impressao.window.close();
+};
+
+ 

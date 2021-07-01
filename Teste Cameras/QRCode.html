@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QRCode</title>
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+    <h1>Teste</h1>
+    <div class="container-fluid">
+        <div  id="sua_div" class="text-center">
+            <img id="qr-code" src="android-chrome-192x192.png" alt="QRCode">
+        </div>
+      
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="content">Content:</label>
+                <div class="col-sm-10">
+                    <ul>
+                        Nome: <input type="text" class="form-control dados" id="nome" placeholder="Nome*" required>
+                    </ul>
+                    <ul>
+                        CPF: <input type="text" class="form-control dados" id="cpf" placeholder="CPF*" required> 
+                    </ul>
+                    <ul>
+                        ID: <input type="number" class="form-control dados" id="iduser" placeholder="ID" disabled> 
+                    </ul>
+                    <ul>
+                        <p id="dados"></p> 
+                    </ul>
+                    
+                </div>
+            </div>
+            <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-default" id="generate" onclick="gerar()">Generate</button>
+                    <button id="btn" onclick="imprimir()">Clique para imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cam">
+        <video id="webcam"></video>
+    </div>
+
+    <script src="js/instascan.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>            
+    
+    <script src="js/javascript.js"></script>    
+    
+</body>
+</html>
