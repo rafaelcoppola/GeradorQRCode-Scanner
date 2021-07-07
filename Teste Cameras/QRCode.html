@@ -5,52 +5,126 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QRCode</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
-    <h1>Teste</h1>
-    <div class="container-fluid">
-        <div  id="sua_div" class="text-center">
-            <img id="qr-code" src="android-chrome-192x192.png" alt="QRCode">
-        </div>
-      
-        <div class="form-horizontal">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="content">Content:</label>
-                <div class="col-sm-10">
-                    <ul>
-                        Nome: <input type="text" class="form-control dados" id="nome" placeholder="Nome*" required>
-                    </ul>
-                    <ul>
-                        CPF: <input type="text" class="form-control dados" id="cpf" placeholder="CPF*" required> 
-                    </ul>
-                    <ul>
-                        ID: <input type="number" class="form-control dados" id="iduser" placeholder="ID" disabled> 
-                    </ul>
-                    <ul>
-                        <p id="dados"></p> 
-                    </ul>
-                    
-                </div>
+   <section class="hero">
+      <div class="container">
+         <div class="content">
+            <div class="generatorQRCode">
+               <div class="QRCodeImage" id="code">
+                  <img id="qr-code" src="Images/apple-touch-icon.png" alt="QRCode">
+               </div>
+               <div class="form">
+                  <div class="form-group">
+                     <label class="control-label" for="content">Isira os dados do fúncionario:</label>
+                     <form class="needs-validation" novalidate>
+                        <div class="form-row">
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom01">Nome Completo</label>
+                              <input type="text" class="form-control" id="name" placeholder="Nome Completo Fúncionario"  required>
+                              <div class="valid-feedback">
+                                 Tudo certo!
+                              </div>
+                           </div>														
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom02">PIS</label>
+                              <input type="text" class="form-control" id="pis" placeholder="Numero PIS" maxlength="11" required>
+                              <div class="valid-feedback">
+                                 Tudo certo!
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom03">CPF</label>
+                              <input type="text" class="form-control" id="cpf" placeholder="CPF" maxlength="11" required>
+                              <div class="valid-feedback">
+                                 Tudo certo!
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustomUsername">Email Do Usuário</label>
+                              <div class="input-group">                                  
+                                 <input type="email" class="form-control" id="user" placeholder="exemplo@exemplo.com.br" aria-describedby="inputGroupPrepend" required>
+                                 <div class="invalid-feedback">
+                                    Por favor, escolha um nome de usuário.
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="form-row">
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom04">Senha PIN de 4 Digitos</label>
+                              <input type="password" class="form-control" id="password" placeholder="Ex: 1234" minlength="4" maxlength="4" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe uma senha válida.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom05">Confirmar Senha</label>
+                              <input type="password" class="form-control" id="checkpassword" placeholder="Repita Sua Senha" minlength="4" maxlength="4" required>
+                              <div class="invalid-feedback">
+                                 Senhas nao conferem.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom06">CEP</label>
+                              <input type="text" class="form-control" id="cep" placeholder="CEP" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe um CEP válido.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom07">Cidade</label>
+                              <input type="text" class="form-control" id="city" placeholder="Cidade" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe uma cidade válida.
+                              </div>
+                           </div>
+                        </div>	
+                        <div class="form-row">
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom08">Estado</label>
+                              <input type="text" class="form-control" id="state" placeholder="Estado" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe um estado válido.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom09">Endereço</label>
+                              <input type="text" class="form-control" id="address" placeholder="Rua, Avenida, Praça" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe uma endereço válido.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom10">Numero</label>
+                              <input type="text" class="form-control" id="addressnumber" placeholder="Nº" required>
+                              <div class="invalid-feedback">
+                                 Por favor, informe uma número válido.
+                              </div>
+                           </div>
+                           <div class="col-md-3 mb-3">
+                              <label for="validationCustom11">Complemento</label>
+                              <input type="text" class="form-control" id="complement" placeholder="Ap, Casa">
+                              
+                           </div>
+                           <label for=""></label>
+                           <input type="number" class="form-control dados" id="iduser" placeholder="ID" disabled>
+                        </div>
+                        <button class="btn btn-primary" type="submit" onclick="generate()">Gerar QRCode</button>
+                        <button class="btn btn-primary" id="print" onclick="imprimir()">Imprimir QRCode</button>
+                     </form>
+                  </div>
+               </div>
             </div>
-            <div class="form-group"> 
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="button" class="btn btn-default" id="generate" onclick="gerar()">Generate</button>
-                    <button id="btn" onclick="imprimir()">Clique para imprimir</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="cam">
-        <video id="webcam"></video>
-    </div>
+         </div>
+      </div>	
+   </section>
 
-    <script src="js/instascan.min.js"></script>
-    <script src="js/jquery.min.js"></script>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"></script>            
-    
-    <script src="js/javascript.js"></script>    
+   <script src="js/jquery.min.js"></script>
+   <script src="js/javascript.js"></script>
+   <script src="js/bootstrap.min.js"></script>    
     
 </body>
 </html>

@@ -1,7 +1,9 @@
 
 //Scanner QRCode
 document.addEventListener("DOMContentLoaded", event => {
-  let scanner = new Instascan.Scanner({ video: document.getElementById('preview') });
+  let scanner = new Instascan.Scanner ({
+    video: document.getElementById('preview')
+  });
   Instascan.Camera.getCameras().then(cameras => {
     scanner.camera = cameras[cameras.length - 1];
     scanner.start();
@@ -10,12 +12,11 @@ document.addEventListener("DOMContentLoaded", event => {
   scanner.addListener('scan', content => {
     document.getElementById('scaner').innerHTML = content;
     
+    
   });
 });
 
-function enviar() {
-  alert("funcionou")
-}
+
 
 //Geolocalization
 if (navigator.geolocation) {
