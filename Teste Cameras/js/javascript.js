@@ -16,34 +16,22 @@
 })();
 
 //gerador de QRCode
+let content = document.querySelectorAll('input')
+let dices = []
+let Googlecharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl='
+let Randomkey = Math.floor(Math.random()  * 1000000000000000000)
+let UserId = content + Randomkey
+let Imageqrcode = Googlecharts + Randomkey  
 function generate() {
-  var content = [
-    document.querySelector('#name').value,
-    document.querySelector('#pis').value,
-    document.querySelector('#cpf').value,
-    document.querySelector('#user').value,
-    document.querySelector('#password').value,
-    document.querySelector('#checkpassword').value,
-    document.querySelector('#cep').value,
-    document.querySelector('#city').value,
-    document.querySelector('#state').value,
-    document.querySelector('#address').value,
-    document.querySelector('#addressnumber').value,   
-  ]
-  var records = []
-  //var name = document.querySelector('#name').value
-  //var cpf = document.querySelector('#cpf').value
-  var Googlecharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl='  
-  if ( Array.isArray(content) && content.values >= 0) {
-    alert("Impossivel Gerar QRCode")      
-  }else {
-    var Randomkey = Math.floor(Math.random()  * 1000000000000000000)
-    var UserId = content + Randomkey
-    var Imageqrcode = Googlecharts + Randomkey
+  dices.push(content.value)
+  if ( content.value > 0) {
     document.getElementById('qr-code').src = Imageqrcode;
     document.getElementById('iduser').value = Randomkey
-    //document.getElementById('dados').innerHTML = `O ID do usuario ${name} portador do cpf numero: ${cpf} é ${Randomkey}`
-    alert("QRCode Gerado com Sucesso")
+    alert(`QRCode Gerado com Sucesso dados com os seguintes dados: ${dices}`)
+    console.log(dices)
+  }else {
+    alert("Impossivel Gerar QRCode")
+    console.log(dices)
   }
 }
 
