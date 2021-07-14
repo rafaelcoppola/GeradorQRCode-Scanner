@@ -16,35 +16,33 @@
 })();
 
 //gerador de QRCode
-let content = [ nome => document.getElementById('name').value,
-  document.getElementById('pis').value,
-  document.getElementById('cpf').value,
-  document.getElementById('user').value,
-  document.getElementById('password').value,
-  document.getElementById('checkpassword').value,
-  document.getElementById('cep').value,
-  document.getElementById('city').value,
-  document.getElementById('state').value,
-  document.getElementById('address').value,
-  document.getElementById('addressnumber').value,
-  document.getElementById('complement').value
-]
-//let dices = []
-let Googlecharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl='
-let Randomkey = Math.floor(Math.random()  * 1000000000000000000)
-let UserId = content + Randomkey
-let Imageqrcode = Googlecharts + Randomkey  
+//let content = [ document.getElementsByTagName('input')]
+
+
+//Api QRCode
+var Googlecharts = 'https://chart.googleapis.com/chart?chs=500x500&cht=qr&chl='
+
+//Chave Aleatoria
+var Randomkey = Math.floor(Math.random()  * 1000000000000000000)
+
+//var UserId =  
+
+var Imageqrcode = Googlecharts + Randomkey
 function generate() {
-  //dices.push(content.value)
-  if ( content.value > 0 ) {
-    document.getElementById('qr-code').src = Imageqrcode;
-    document.getElementById('iduser').value = Randomkey
-    alert(`QRCode Gerado com Sucesso dados com os seguintes dados: ${content.value}`)
-    console.log(content.value)
-  }else {
-    alert("Impossivel Gerar QRCode")
-    console.log(content)
-  }
+  //Dados Input do formulario
+var nome = document.getElementById("#name").value
+var pis = document.getElementById('#pis').value
+var cpf = document.getElementById('cpf').value
+var user = document.getElementById('user').value
+var password = document.getElementById('password').value
+var checkpassword = document.getElementById('checkpassword').value
+var cep = document.getElementById('cep').value
+var city = document.getElementById('city').value
+var state = document.getElementById('state').value
+var address = document.getElementById('address').value
+var addressnumber = document.getElementById('addressnumber').value
+var complement = document.getElementById('complement').value
+  console.log(`Cliente ${nome} do pis ${pis}`)
 }
 
 //impressão
